@@ -3,109 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to TestRepo</title>
+  <title>TestRepo</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
     body {
-      font-family: "Poppins", sans-serif;
-      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #89f7fe, #66a6ff);
       color: #333;
+      overflow-x: hidden;
     }
 
     /* Navigation Bar */
     nav {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
       position: fixed;
+      width: 100%;
       top: 0;
       left: 0;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(10px);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 15px 40px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
       z-index: 1000;
+      animation: slideDown 1s ease;
     }
 
     nav .logo {
-      font-size: 1.5rem;
+      font-size: 1.6em;
       font-weight: bold;
-      color: #333;
+      color: #fff;
+      letter-spacing: 1px;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 1.5rem;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      position: relative;
     }
 
     nav ul li a {
+      color: #fff;
       text-decoration: none;
-      color: #333;
       font-weight: 500;
       transition: color 0.3s ease;
     }
 
     nav ul li a:hover {
-      color: #0078ff;
+      color: #ffea00;
     }
 
-    /* Section Styling */
+    nav ul li::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: #ffea00;
+      left: 0;
+      bottom: -5px;
+      transition: width 0.3s ease;
+    }
+
+    nav ul li:hover::after {
+      width: 100%;
+    }
+
+    /* Page Content */
     section {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 4rem 1rem;
       text-align: center;
-    }
-
-    #home {
-      margin-top: 4rem;
-    }
-
-    .card {
-      background: white;
-      padding: 2rem 3rem;
-      border-radius: 20px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
+      margin-top: 120px;
+      animation: fadeIn 1.5s ease;
     }
 
     h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    h2 {
-      margin-bottom: 1rem;
-      font-size: 1.8rem;
+      font-size: 3em;
+      color: #fff;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+      animation: pulse 3s infinite;
     }
 
     p {
-      font-size: 1.1rem;
-      color: #555;
-      max-width: 600px;
+      font-size: 1.3em;
+      color: #fff;
+      margin-top: 10px;
     }
 
-    footer {
-      background: rgba(0, 0, 0, 0.1);
-      text-align: center;
-      padding: 1rem;
-      color: #333;
-      font-size: 0.9rem;
+    /* Keyframe Animations */
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { text-shadow: 0 0 10px #fff, 0 0 20px #ffea00, 0 0 30px #ffea00; }
+      50% { text-shadow: 0 0 20px #fff, 0 0 30px #ffea00, 0 0 40px #ffea00; }
     }
   </style>
 </head>
@@ -113,41 +116,16 @@
   <nav>
     <div class="logo">TestRepo</div>
     <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">Contact</a></li>
     </ul>
   </nav>
 
-  <section id="home">
-    <div class="card">
-      <h1>Welcome to TestRepo</h1>
-      <p>This is your live GitHub Pages site 🎉</p>
-    </div>
+  <section>
+    <h1>Welcome to TestRepo</h1>
+    <p>This is your live GitHub Pages site 🎉</p>
   </section>
-
-  <section id="about">
-    <h2>About</h2>
-    <p>
-      TestRepo is a personal experiment and creative space where Jeevan explores web development, design, and innovation. 🌱
-    </p>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <p>
-      Future projects will be showcased here — stay tuned for updates on Jeevan’s coding journey 🚀
-    </p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>
-      You can reach out at <strong>jeevan.marks7@gmail.com</strong> 💌
-    </p>
-  </section>
-
-  <footer>Created by Jeevan — © 2025</footer>
 </body>
 </html>
