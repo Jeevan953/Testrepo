@@ -9,16 +9,13 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
     body {
-      height: 100vh;
       font-family: "Poppins", sans-serif;
       background: linear-gradient(135deg, #74ebd5, #ACB6E5);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      color: #333;
     }
 
     /* Navigation Bar */
@@ -27,20 +24,20 @@
       top: 0;
       left: 0;
       width: 100%;
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(10px);
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
     }
 
     nav .logo {
       font-size: 1.5rem;
       font-weight: bold;
       color: #333;
-      letter-spacing: 1px;
     }
 
     nav ul {
@@ -60,15 +57,27 @@
       color: #0078ff;
     }
 
-    /* Main Card */
+    /* Section Styling */
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+
+    #home {
+      margin-top: 4rem;
+    }
+
     .card {
       background: white;
       padding: 2rem 3rem;
       border-radius: 20px;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-      text-align: center;
       transition: transform 0.3s ease;
-      margin-top: 5rem;
     }
 
     .card:hover {
@@ -76,22 +85,26 @@
     }
 
     h1 {
-      color: #333;
       font-size: 2rem;
       margin-bottom: 0.5rem;
     }
 
+    h2 {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
     p {
-      color: #666;
       font-size: 1.1rem;
+      color: #555;
+      max-width: 600px;
     }
 
     footer {
-      position: absolute;
-      bottom: 10px;
-      width: 100%;
+      background: rgba(0, 0, 0, 0.1);
       text-align: center;
-      color: #fff;
+      padding: 1rem;
+      color: #333;
       font-size: 0.9rem;
     }
   </style>
@@ -100,18 +113,41 @@
   <nav>
     <div class="logo">TestRepo</div>
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Projects</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <div class="card">
-    <h1>Welcome to TestRepo</h1>
-    <p>This is your live GitHub Pages site 🎉</p>
-  </div>
+  <section id="home">
+    <div class="card">
+      <h1>Welcome to TestRepo</h1>
+      <p>This is your live GitHub Pages site 🎉</p>
+    </div>
+  </section>
 
-  <footer>Created by Jeevan</footer>
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      TestRepo is a personal experiment and creative space where Jeevan explores web development, design, and innovation. 🌱
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <p>
+      Future projects will be showcased here — stay tuned for updates on Jeevan’s coding journey 🚀
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>
+      You can reach out at <strong>jeevan.marks7@gmail.com</strong> 💌
+    </p>
+  </section>
+
+  <footer>Created by Jeevan — © 2025</footer>
 </body>
 </html>
