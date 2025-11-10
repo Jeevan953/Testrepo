@@ -5,18 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TestRepo</title>
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #89f7fe, #66a6ff);
-      color: #333;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #1e90ff, #ff69b4);
+      color: white;
+      height: 100vh;
       overflow-x: hidden;
     }
 
-    /* Navigation Bar */
-    nav {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(8px);
+    header {
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(6px);
       position: fixed;
       width: 100%;
       top: 0;
@@ -25,107 +30,96 @@
       justify-content: space-between;
       align-items: center;
       padding: 15px 40px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
       z-index: 1000;
-      animation: slideDown 1s ease;
+      animation: slideDown 0.8s ease;
     }
 
-    nav .logo {
-      font-size: 1.6em;
-      font-weight: bold;
-      color: #fff;
-      letter-spacing: 1px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 25px;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav ul li {
-      position: relative;
-    }
-
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    nav ul li a:hover {
-      color: #ffea00;
-    }
-
-    nav ul li::after {
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 2px;
-      background-color: #ffea00;
-      left: 0;
-      bottom: -5px;
-      transition: width 0.3s ease;
-    }
-
-    nav ul li:hover::after {
-      width: 100%;
-    }
-
-    /* Page Content */
-    section {
-      text-align: center;
-      margin-top: 120px;
-      animation: fadeIn 1.5s ease;
-    }
-
-    h1 {
-      font-size: 3em;
-      color: #fff;
-      text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-      animation: pulse 3s infinite;
-    }
-
-    p {
-      font-size: 1.3em;
-      color: #fff;
-      margin-top: 10px;
-    }
-
-    /* Keyframe Animations */
     @keyframes slideDown {
       from { transform: translateY(-100%); opacity: 0; }
       to { transform: translateY(0); opacity: 1; }
     }
 
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffeb3b;
+    }
+
+    main {
+      margin-top: 120px;
+      text-align: center;
+      animation: fadeIn 1.2s ease-in;
+    }
+
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(40px); }
+      from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes pulse {
-      0%, 100% { text-shadow: 0 0 10px #fff, 0 0 20px #ffea00, 0 0 30px #ffea00; }
-      50% { text-shadow: 0 0 20px #fff, 0 0 30px #ffea00, 0 0 40px #ffea00; }
+    h1 {
+      font-size: 2.5rem;
+      text-shadow: 0 0 10px rgba(255,255,255,0.5);
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-top: 15px;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        background: rgba(0,0,0,0.4);
+        padding: 10px;
+        border-radius: 10px;
+      }
     }
   </style>
 </head>
 <body>
-  <nav>
+  <header>
     <div class="logo">TestRepo</div>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Projects</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <section>
+  <main>
     <h1>Welcome to TestRepo</h1>
     <p>This is your live GitHub Pages site 🎉</p>
-  </section>
+  </main>
+
+  <footer>© 2025 TestRepo by Jeevan</footer>
 </body>
 </html>
